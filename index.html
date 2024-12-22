@@ -1,4 +1,3 @@
-index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +5,12 @@ index.html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIRCLE CRIME || TIER PLAYER</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* Mengatur latar belakang dengan gradien */
+        /* Latar belakang gradien dengan kesan bayang halus */
         body {
-            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradien warna lembut */
-            font-family: 'Roboto', sans-serif; /* Font utama */
+            background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradien cerah */
+            font-family: 'Roboto', sans-serif;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -20,11 +20,97 @@ index.html
             height: 100vh;
             text-align: center;
             background-attachment: fixed;
+            overflow: hidden;
         }
 
-        /* Gaya untuk tajuk */
+        /* Gaya tajuk utama */
         h1 {
-            font-family: 'Staatliches', cursive; /* Font lebih estetik */
-            font-size: 4rem;
+            font-family: 'Staatliches', cursive;
+            font-size: 5rem;
             color: #fff;
-            background: linear-gradient(to right, #ff7e5f, #
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: slideIn 2s ease-out;
+            margin-bottom: 40px;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(-100px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Senarai ranking dengan gaya moden dan bayang */
+        ol {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 0;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        li {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            padding: 20px;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Efek hover dengan animasi bayang dan perubahan warna */
+        li:hover {
+            transform: scale(1.05);
+            background-color: #ff7e5f;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Efek ikon untuk Tier S */
+        li::before {
+            content: '\f0a4'; /* Ikon FontAwesome */
+            font-family: 'FontAwesome';
+            font-size: 1.8rem;
+            color: #ffdb58;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        /* Penyesuaian untuk Tier S, A, B */
+        li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4), li:nth-child(5), li:nth-child(6), li:nth-child(7) {
+            background-color: #ff7e5f;
+            color: #fff;
+        }
+
+        li:nth-child(n+8) {
+            background-color: #a9a9a9;
+            color: #333;
+        }
+
+        /* Animasi senarai ranking */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Menambah padding dan spacing agar elemen lebih 'bersih' */
+        .container {
+            padding: 20px;
+            max-width: 1400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Untuk meningkatkan tampilan */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background
