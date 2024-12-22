@@ -9,7 +9,7 @@
     <style>
         /* Menetapkan latar belakang dengan gradien dan font */
         body {
-            background: linear-gradient(45deg, #0f2027, #203a43, #2c5364); /* Gradien warna yang lebih gelap dan elegan */
+            background: linear-gradient(45deg, #2d9cdb, #56ccf2, #2b8eaf); /* Gradien biru yang cerah dan segar */
             font-family: 'Roboto', sans-serif; /* Font utama */
             color: #fff;
             margin: 0;
@@ -29,7 +29,7 @@
             font-family: 'Staatliches', cursive; /* Font estetik */
             font-size: 4rem;
             color: #fff;
-            background: linear-gradient(to right, #ff5f6d, #ffc3a0); /* Gradien untuk tajuk */
+            background: linear-gradient(to right, #ff6a00, #ffcc00); /* Gradien cerah untuk tajuk */
             -webkit-background-clip: text;
             background-clip: text;
             animation: slideIn 2s ease-out;
@@ -46,16 +46,16 @@
         /* Gaya senarai ranking */
         ol {
             list-style-position: inside;
-            max-width: 1000px; /* Memperbesar lebar senarai */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap dengan transparansi */
-            padding: 25px;
+            background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap dengan transparansi */
+            padding: 30px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
             animation: popIn 1.5s ease-out;
-            backdrop-filter: blur(10px); /* Menambah efek blur */
+            backdrop-filter: blur(8px); /* Menambah efek blur */
         }
 
         /* Animasi senarai ranking */
@@ -66,19 +66,20 @@
 
         /* Gaya item dalam senarai */
         li {
-            padding: 12px;
+            padding: 15px;
             margin: 8px 0;
             border-bottom: 1px solid #ddd;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             border-radius: 8px;
             position: relative;
             overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.1); /* Latar belakang item senarai */
         }
 
         /* Efek hover pada item senarai */
         li:hover {
-            background-color: #ff5f6d; /* Warna hover */
+            background-color: #ff6a00; /* Warna hover */
             color: #fff;
             transform: scale(1.05);
         }
@@ -91,7 +92,7 @@
             left: 10px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: #ffdb58;
         }
 
@@ -104,7 +105,7 @@
         /* Gaya untuk tier B */
         li:nth-child(n+9) {
             font-style: italic;
-            color: #a9a9a9;
+            color: #b0b0b0;
         }
 
         /* Animasi untuk latar belakang bergerak */
