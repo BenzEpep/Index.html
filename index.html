@@ -3,279 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIRCLE CRIME || ALL BASE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Staatliches&display=swap" rel="stylesheet">
+    <title>CIRCLE CRIME OFFICIAL || ALL BASE</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
 
         body {
-            background: linear-gradient(45deg, #ff0000, #000000); /* Gradien merah dan hitam */
-            font-family: 'Roboto', sans-serif;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, black, red);
+            color: white;
             text-align: center;
             padding: 20px;
         }
-
         h1 {
-            font-size: 3rem;
-            background: linear-gradient(to right, #ff6a00, #ffcc00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-family: 'Staatliches', cursive;
-            font-size: 2rem;
-            color: #ffdb58;
+            font-size: 30px;
+            text-transform: uppercase;
             margin-bottom: 20px;
+            border-bottom: 3px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
         }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* 3 kolom untuk desktop */
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin-bottom: 40px;
+        /* Gaya untuk senarai pemimpin */
+        .leader-container {
+            background: rgba(0, 0, 0, 0.9);
+            border: 3px solid gold;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 15px gold;
+            width: 80%;
         }
-
-        .section {
-            border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            padding: 20px;
-            backdrop-filter: blur(5px);
-            text-align: left;
-        }
-
-        ol {
-            list-style-position: inside;
-            padding: 0;
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        li {
-            padding: 10px;
-            margin: 5px 0;
-            border-bottom: 1px solid #ddd;
-            transition: transform 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            white-space: nowrap;
-        }
-
-        li:hover {
-            transform: scale(1.05);
-            background-color: #ff6a00;
-            color: #fff;
-        }
-
-        /* Bahagian CRIME JR */
-        .crime-jr-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin-top: 40px;
-        }
-
-        .crime-jr-section {
-            border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            padding: 20px;
-            backdrop-filter: blur(5px);
-        }
-
-        /* Styling untuk setiap tier */
-        .tier {
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-top: 20px;
+        .leaders {
+            font-size: 28px;
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+            color: gold;
+            text-transform: uppercase;
             margin-bottom: 10px;
         }
-
-        .tier-s {
-            color: #FF3333;
-            text-shadow: 0 0 10px #FF3333, 0 0 20px #FF3333, 0 0 30px #FF3333;
+        .leader-list {
+            list-style: none;
+            padding: 0;
+            font-size: 22px;
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+            line-height: 1.8;
         }
-
-        .tier-a-plus {
-            color: #FFDD00;
-            text-shadow: 0 0 10px #FFDD00, 0 0 20px #FFDD00, 0 0 30px #FFDD00;
+        .leader-list li {
+            margin: 8px 0;
         }
-
-        .tier-a {
-            color: #ffcc00;
-        }
-
-        .tier-b {
-            color: #c0c0c0;
-        }
-
-        ol.tier-list {
-            padding-left: 20px;
-        }
-
-        /* Menambahkan ruang dan penyelarasan tajuk */
-        .reserve-title, .tier-title {
-            text-align: center;
-            font-size: 2rem;
-            background: linear-gradient(to right, #ff6a00, #ffcc00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+        /* Gaya untuk Roster */
+        .roster-container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid white;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
             margin-top: 20px;
-            margin-bottom: 20px;
+            width: 80%;
         }
-
-        /* Menyusun komponen supaya tidak terlalu luas di pelbagai saiz skrin */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
+        .roster-title {
+            font-size: 24px;
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            color: yellow;
+            border-bottom: 2px solid yellow;
+            display: inline-block;
+            padding-bottom: 5px;
         }
-
-        @media (max-width: 768px) {
-            .grid-container, .crime-jr-container {
-                grid-template-columns: 1fr; /* 1 kolom untuk skrin kecil */
-            }
-
-            .section {
-                padding: 15px; /* Kurangkan padding untuk skrin kecil */
-            }
-
-            .tier, .tier-list {
-                font-size: 1rem; /* Saiz font lebih kecil untuk skrin kecil */
-            }
+        .roster-list {
+            list-style: none;
+            padding: 0;
+            font-size: 22px;
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+            line-height: 1.8;
+        }
+        /* Gaya untuk senarai pemain dan achievement */
+        .players, .achievement-title {
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .player-list, .achievement-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .player-list li, .achievement-list li {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 5px;
+            padding: 12px 18px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            border: 2px solid white;
         }
     </style>
 </head>
 <body>
-    <h1>CIRCLE CRIME || ALL BASE</h1>
 
-    <div class="container">
-        <div class="grid-container">
-            <div class="section">
-                <h2>CRIME ELITE HTTPS</h2>
-                <ol>
-                    <li>JACK</li>
-                    <li>RAJA</li>
-                    <li>PLINKO</li>
-                    <li>SAJID</li>
-                </ol>
-            </div>
-            <div class="section">
-                <!-- Menambah tajuk ke tengah bahagian "RESERVE PLAYER CRIME ELITE" -->
-                <div class="reserve-title">RESERVE PLAYER CRIME ELITE</div>
-                <ol>
-                    <li>IMANVVIP</li>
-                    <li>QAMM</li>
-                    <li>FIQQ</li>
-                    <li>ZUXXY</li>
-                </ol>
-            </div>
-            <div class="section">
-                <h2>CRIME ELITE PEPENG</h2>
-                <ol>
-                    <li>MURSID FF</li>
-                    <li>WANN FF</li>
-                    <li>IMANVVIP</li>
-                    <li>BOBON</li>
-                </ol>
-            </div>
-        </div>
+    <h1>CIRCLE CRIME OFFICIAL || ALL BASE</h1>
 
-        <!-- Bahagian CRIME JR -->
-        <div class="crime-jr-container">
-            <div class="crime-jr-section">
-                <h2>CRIME JR HTTPS</h2>
-                <ol>
-                    <li>BOYY</li>
-                    <li>TREX</li>
-                    <li>WANZ</li>
-                    <li>IMANVVIP</li>
-                </ol>
-            </div>
-
-            <div class="crime-jr-section">
-                <!-- Menambah tajuk ke tengah bahagian "RESERVE PLAYER CRIME JR" -->
-                <div class="reserve-title">RESERVE PLAYER CRIME JR</div>
-                <ol>
-                    <li>RIZZ</li>
-                    <li>MALL</li>
-                    <li>MILOO</li> <!-- MILOO ditambah -->
-                    <li>MARZ</li> <!-- MARZ ditambah -->
-                </ol>
-            </div>
-
-            <div class="crime-jr-section">
-                <h2>CRIME JR PEPENG</h2>
-                <ol>
-                    <li>TREX</li>
-                </ol>
-            </div>
-        </div>
-
-        <div class="section">
-            <!-- Menambah tajuk untuk "TIER PLAYERS" di tengah -->
-            <div class="tier-title">TIER PLAYERS</div>
-
-            <!-- TIER S -->
-            <div class="tier tier-s">TIER S</div>
-            <ol class="tier-list">
-                <li>PLINKO || TIER S</li>
-                <li>SAJID || TIER S</li>
-                <li>JACK || TIER S</li>
-            </ol>
-
-            <!-- TIER A+ -->
-            <div class="tier tier-a-plus">TIER A+</div>
-            <ol class="tier-list">
-                <li>IMANVVIP || TIER A+</li>
-                <li>BOBON || TIER A+</li>
-                <li>TREX || TIER A+</li>
-            </ol>
-
-            <!-- TIER A -->
-            <div class="tier tier-a">TIER A</div>
-            <ol class="tier-list">
-                <li>RIZZ || TIER A</li>
-                <li>MURSID || TIER A</li>
-                <li>WANZ || TIER A</li>
-                <li>RAJA || TIER A</li>
-                <li>QAMM || TIER A</li>
-                <li>FIQQ || TIER A</li>
-                <li>ZUXXY || TIER A</li>
-            </ol>
-
-            <!-- TIER B -->
-            <div class="tier tier-b">TIER B</div>
-            <ol class="tier-list">
-                <li>KILLER || TIER B</li>
-                <li>MILOO || TIER B</li>
-                <li>PIZI || TIER B</li>
-                <li>AFIQ || TIER B</li>
-                <li>MALL || TIER B</li>
-                <li>WANN FF || TIER B</li>
-            </ol>
-        </div>
+    <div class="leader-container">
+        <div class="leaders">LEADERSHIP</div>
+        <ul class="leader-list">
+            <li>LEADER ALL CIRCLE CRIME - <strong>BENZ</strong></li>
+            <li>LEADER CIRCLE CRIME IND - <strong>DAPIN</strong></li>
+            <li>CO LEADER - <strong>JACK</strong></li>
+            <li>CAPTAIN 1 - <strong>IZZ</strong></li>
+            <li>CAPTAIN 2 - <strong>BOYY</strong></li>
+            <li>CAPTAIN GUILD - <strong>MOSHI</strong></li>
+        </ul>
     </div>
+
+    <div class="roster-container">
+        <div class="roster-title">ROSTER CRIME ELITE PEPENG ⭐</div>
+        <ul class="roster-list">
+            <li>1. JACK (PC)</li>
+            <li>2. MURSID (PC)</li>
+            <li>3. WENFF (PC)</li>
+            <li>4. CIBI (PC)</li>
+        </ul>
+    </div>
+
+    <div class="roster-container">
+        <div class="roster-title">ROSTER CRIME JR PEPENG ⭐</div>
+        <ul class="roster-list">
+            <li>1. BOYY (HP)</li>
+            <li>2. RIZZ (HP)</li>
+            <li>3. WARIEY (HP)</li>
+            <li>4. MALL (HP)</li>
+        </ul>
+    </div>
+
+    <div class="players">ALL PLAYERS • CIRCLE CRIME</div>
+    
+    <ul class="player-list">
+        <li>JACK</li> <li>RAJA</li> <li>SHEN</li> <li>SAJID</li> <li>IZZ</li>
+        <li>MURSID</li> <li>BOBON</li> <li>PIZI</li> <li>CIBI</li> <li>DAPIN</li>
+        <li>AZNIL</li> <li>MILO</li> <li>MAN</li> <li>MALL</li> <li>BOYY</li>
+        <li>KILLER</li> <li>PAIJAL</li> <li>ZAM</li> <li>ALYA</li> <li>LEXX</li>
+        <li>RIZZ</li> <li>DAPI</li> <li>KISON</li> <li>WENFF</li>
+    </ul>
+
+    <div class="achievement-title">🏆 ACHIEVEMENT TEAM & MEMBER</div>
+
+    <div class="achievement-title">CRIME ELITE HTTPS - TIER S HTTPS</div>
+    <ul class="achievement-list">
+        <li>RAJA</li> <li>SAJID</li> <li>JACK</li> <li>SHEN</li> <li>IZZ</li>
+    </ul>
+
+    <div class="achievement-title">CRIME JR - TIER S PEPENG</div>
+    <ul class="achievement-list">
+        <li>BOYY</li> <li>ALIEN</li> <li>MURSID</li> <li>RIZZ</li> <li>DAMZ</li>
+    </ul>
+
 </body>
 </html>
