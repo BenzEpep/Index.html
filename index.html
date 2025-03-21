@@ -7,13 +7,27 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
 
+        /* Pastikan seluruh halaman tidak scroll ke tepi */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Tetapkan layout ke tengah dengan saiz tetap */
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, black, red);
             color: white;
             text-align: center;
             padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
         }
+
         h1 {
             font-size: 30px;
             text-transform: uppercase;
@@ -24,65 +38,45 @@
             font-weight: 900;
             font-family: 'Oswald', sans-serif;
         }
-        /* Gaya untuk senarai pemimpin */
-        .leader-container {
+
+        .container {
+            max-width: 800px; /* Pastikan semua elemen tidak terlalu lebar */
+            width: 100%;
+            margin: auto;
+        }
+
+        .leader-container, .roster-container {
             background: rgba(0, 0, 0, 0.9);
             border: 3px solid gold;
             padding: 15px;
             border-radius: 10px;
-            display: inline-block;
-            margin-bottom: 20px;
             box-shadow: 0px 0px 15px gold;
-            width: 80%;
+            margin: 20px 0;
+            text-align: center;
         }
-        .leaders {
+
+        .leaders, .roster-title {
             font-size: 28px;
             font-weight: 900;
             font-family: 'Oswald', sans-serif;
-            color: gold;
             text-transform: uppercase;
+            color: gold;
             margin-bottom: 10px;
         }
-        .leader-list {
+
+        .leader-list, .roster-list {
             list-style: none;
             padding: 0;
             font-size: 22px;
             font-weight: 900;
             font-family: 'Oswald', sans-serif;
             line-height: 1.8;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .leader-list li {
-            margin: 8px 0;
-        }
-        /* Gaya untuk Roster */
-        .roster-container {
-            background: rgba(0, 0, 0, 0.8);
-            border: 3px solid white;
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 20px;
-            width: 80%;
-        }
-        .roster-title {
-            font-size: 24px;
-            font-weight: 900;
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            color: yellow;
-            border-bottom: 2px solid yellow;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        .roster-list {
-            list-style: none;
-            padding: 0;
-            font-size: 22px;
-            font-weight: 900;
-            font-family: 'Oswald', sans-serif;
-            line-height: 1.8;
-        }
-        /* Gaya untuk senarai pemain dan achievement */
+
         .players, .achievement-title {
             margin-top: 30px;
             font-size: 24px;
@@ -93,16 +87,18 @@
             display: inline-block;
             padding-bottom: 5px;
         }
+
         .player-list, .achievement-list {
             list-style: none;
             padding: 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 5px;
         }
+
         .player-list li, .achievement-list li {
             background: rgba(255, 255, 255, 0.2);
-            margin: 5px;
             padding: 12px 18px;
             border-radius: 5px;
             font-size: 20px;
@@ -117,59 +113,63 @@
 
     <h1>CIRCLE CRIME OFFICIAL || ALL BASE</h1>
 
-    <div class="leader-container">
-        <div class="leaders">LEADERSHIP</div>
-        <ul class="leader-list">
-            <li>LEADER ALL CIRCLE CRIME - <strong>BENZ</strong></li>
-            <li>LEADER CIRCLE CRIME IND - <strong>DAPIN</strong></li>
-            <li>CO LEADER - <strong>JACK</strong></li>
-            <li>CAPTAIN 1 - <strong>IZZ</strong></li>
-            <li>CAPTAIN 2 - <strong>BOYY</strong></li>
-            <li>CAPTAIN GUILD - <strong>MOSHI</strong></li>
+    <div class="container">
+
+        <div class="leader-container">
+            <div class="leaders">LEADERSHIP</div>
+            <ul class="leader-list">
+                <li>LEADER ALL CIRCLE CRIME - <strong>BENZ</strong></li>
+                <li>LEADER CIRCLE CRIME IND - <strong>DAPIN</strong></li>
+                <li>CO LEADER - <strong>JACK</strong></li>
+                <li>CAPTAIN 1 - <strong>IZZ</strong></li>
+                <li>CAPTAIN 2 - <strong>BOYY</strong></li>
+                <li>CAPTAIN GUILD - <strong>MOSHI</strong></li>
+            </ul>
+        </div>
+
+        <div class="roster-container">
+            <div class="roster-title">ROSTER CRIME ELITE PEPENG ⭐</div>
+            <ul class="roster-list">
+                <li>1. JACK (PC)</li>
+                <li>2. MURSID (PC)</li>
+                <li>3. WENFF (PC)</li>
+                <li>4. CIBI (PC)</li>
+            </ul>
+        </div>
+
+        <div class="roster-container">
+            <div class="roster-title">ROSTER CRIME JR PEPENG ⭐</div>
+            <ul class="roster-list">
+                <li>1. BOYY (HP)</li>
+                <li>2. RIZZ (HP)</li>
+                <li>3. WARIEY (HP)</li>
+                <li>4. MALL (HP)</li>
+            </ul>
+        </div>
+
+        <div class="players">ALL PLAYERS • CIRCLE CRIME</div>
+
+        <ul class="player-list">
+            <li>JACK</li> <li>RAJA</li> <li>SHEN</li> <li>SAJID</li> <li>IZZ</li>
+            <li>MURSID</li> <li>BOBON</li> <li>PIZI</li> <li>CIBI</li> <li>DAPIN</li>
+            <li>AZNIL</li> <li>MILO</li> <li>MAN</li> <li>MALL</li> <li>BOYY</li>
+            <li>KILLER</li> <li>PAIJAL</li> <li>ZAM</li> <li>ALYA</li> <li>LEXX</li>
+            <li>RIZZ</li> <li>DAPI</li> <li>KISON</li> <li>WENFF</li>
         </ul>
-    </div>
 
-    <div class="roster-container">
-        <div class="roster-title">ROSTER CRIME ELITE PEPENG ⭐</div>
-        <ul class="roster-list">
-            <li>1. JACK (PC)</li>
-            <li>2. MURSID (PC)</li>
-            <li>3. WENFF (PC)</li>
-            <li>4. CIBI (PC)</li>
+        <div class="achievement-title">🏆 ACHIEVEMENT TEAM & MEMBER</div>
+
+        <div class="achievement-title">CRIME ELITE HTTPS - TIER S HTTPS</div>
+        <ul class="achievement-list">
+            <li>RAJA</li> <li>SAJID</li> <li>JACK</li> <li>SHEN</li> <li>IZZ</li>
         </ul>
-    </div>
 
-    <div class="roster-container">
-        <div class="roster-title">ROSTER CRIME JR PEPENG ⭐</div>
-        <ul class="roster-list">
-            <li>1. BOYY (HP)</li>
-            <li>2. RIZZ (HP)</li>
-            <li>3. WARIEY (HP)</li>
-            <li>4. MALL (HP)</li>
+        <div class="achievement-title">CRIME JR - TIER S PEPENG</div>
+        <ul class="achievement-list">
+            <li>BOYY</li> <li>ALIEN</li> <li>MURSID</li> <li>RIZZ</li> <li>DAMZ</li>
         </ul>
+
     </div>
-
-    <div class="players">ALL PLAYERS • CIRCLE CRIME</div>
-    
-    <ul class="player-list">
-        <li>JACK</li> <li>RAJA</li> <li>SHEN</li> <li>SAJID</li> <li>IZZ</li>
-        <li>MURSID</li> <li>BOBON</li> <li>PIZI</li> <li>CIBI</li> <li>DAPIN</li>
-        <li>AZNIL</li> <li>MILO</li> <li>MAN</li> <li>MALL</li> <li>BOYY</li>
-        <li>KILLER</li> <li>PAIJAL</li> <li>ZAM</li> <li>ALYA</li> <li>LEXX</li>
-        <li>RIZZ</li> <li>DAPI</li> <li>KISON</li> <li>WENFF</li>
-    </ul>
-
-    <div class="achievement-title">🏆 ACHIEVEMENT TEAM & MEMBER</div>
-
-    <div class="achievement-title">CRIME ELITE HTTPS - TIER S HTTPS</div>
-    <ul class="achievement-list">
-        <li>RAJA</li> <li>SAJID</li> <li>JACK</li> <li>SHEN</li> <li>IZZ</li>
-    </ul>
-
-    <div class="achievement-title">CRIME JR - TIER S PEPENG</div>
-    <ul class="achievement-list">
-        <li>BOYY</li> <li>ALIEN</li> <li>MURSID</li> <li>RIZZ</li> <li>DAMZ</li>
-    </ul>
 
 </body>
 </html>
