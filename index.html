@@ -1,175 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIRCLE CRIME OFFICIAL || ALL BASE</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CIRCLE CRIME || ALL BASE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Pastikan seluruh halaman tidak scroll ke tepi */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    html {
+      font-size: 16px;
+    }
 
-        /* Tetapkan layout ke tengah dengan saiz tetap */
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, black, red);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-        }
+    body {
+      font-family: 'Anton', sans-serif;
+      background: linear-gradient(135deg, #000000, #550000);
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      position: relative;
+      overflow-x: hidden;
+      cursor: pointer;
+      user-select: none;
+    }
 
-        h1 {
-            font-size: 30px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            border-bottom: 3px solid white;
-            display: inline-block;
-            padding-bottom: 5px;
-            font-weight: 900;
-            font-family: 'Oswald', sans-serif;
-        }
+    h1, .section, .player-box {
+      position: relative;
+      z-index: 1;
+    }
 
-        .container {
-            max-width: 800px; /* Pastikan semua elemen tidak terlalu lebar */
-            width: 100%;
-            margin: auto;
-        }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 6px #000;
+      letter-spacing: 1px;
+    }
 
-        .leader-container, .roster-container {
-            background: rgba(0, 0, 0, 0.9);
-            border: 3px solid gold;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px gold;
-            margin: 20px 0;
-            text-align: center;
-        }
+    .section {
+      margin-top: 2.5rem;
+    }
 
-        .leaders, .roster-title {
-            font-size: 28px;
-            font-weight: 900;
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            color: gold;
-            margin-bottom: 10px;
-        }
+    .section h2 {
+      color: #ffcc00;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px #000;
+    }
 
-        .leader-list, .roster-list {
-            list-style: none;
-            padding: 0;
-            font-size: 22px;
-            font-weight: 900;
-            font-family: 'Oswald', sans-serif;
-            line-height: 1.8;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 100%;
+      padding: 0 10px;
+    }
 
-        .players, .achievement-title {
-            margin-top: 30px;
-            font-size: 24px;
-            font-weight: 900;
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            border-bottom: 2px solid white;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
+    .list span,
+    .list strong {
+      padding: 0.6rem 1rem;
+      background-color: rgba(255, 77, 136, 0.25);
+      border: 2px solid #ff4d88;
+      border-radius: 12px;
+      font-size: 1rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+      letter-spacing: 1px;
+      word-break: break-word;
+    }
 
-        .player-list, .achievement-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 5px;
-        }
+    .player-box {
+      border: 3px solid #ff4d88;
+      border-radius: 20px;
+      padding: 20px;
+      background-color: rgba(255, 77, 136, 0.1);
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
 
-        .player-list li, .achievement-list li {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 12px 18px;
-            border-radius: 5px;
-            font-size: 20px;
-            font-weight: 900;
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            border: 2px solid white;
-        }
-    </style>
+    /* Teks pop-up di posisi klik */
+    .popup-text {
+      position: fixed;
+      font-size: 1.8rem;
+      color: #ff4d88;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 6px 14px;
+      border-radius: 12px;
+      text-shadow: 2px 2px 6px #000;
+      opacity: 1;
+      pointer-events: none;
+      user-select: none;
+      animation: popup-rise-fade 1.5s ease-out forwards;
+      white-space: nowrap;
+      transform-origin: center;
+      z-index: 9999;
+    }
+
+    @keyframes popup-rise-fade {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      80% {
+        opacity: 1;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    }
+  </style>
 </head>
-<body>
+<body onclick="showPopup(event)">
 
-    <h1>CIRCLE CRIME OFFICIAL || ALL BASE</h1>
+  <h1>CIRCLE CRIME || ALL BASE</h1>
 
-    <div class="container">
-
-        <div class="leader-container">
-            <div class="leaders">LEADERSHIP</div>
-            <ul class="leader-list">
-                <li>LEADER ALL CIRCLE CRIME - <strong>BENZ</strong></li>
-                <li>LEADER CIRCLE CRIME IND - <strong>DAPIN</strong></li>
-                <li>CO LEADER - <strong>JACK</strong></li>
-                <li>CAPTAIN 1 - <strong>IZZ</strong></li>
-                <li>CAPTAIN 2 - <strong>BOYY</strong></li>
-                <li>CAPTAIN GUILD - <strong>MOSHI</strong></li>
-            </ul>
-        </div>
-
-        <div class="roster-container">
-            <div class="roster-title">ROSTER CRIME ELITE PEPENG ⭐</div>
-            <ul class="roster-list">
-                <li>1. JACK (PC)</li>
-                <li>2. MURSID (PC)</li>
-                <li>3. WENFF (PC)</li>
-                <li>4. CIBI (PC)</li>
-            </ul>
-        </div>
-
-        <div class="roster-container">
-            <div class="roster-title">ROSTER CRIME JR PEPENG ⭐</div>
-            <ul class="roster-list">
-                <li>1. BOYY (HP)</li>
-                <li>2. RIZZ (HP)</li>
-                <li>3. WARIEY (HP)</li>
-                <li>4. MALL (HP)</li>
-            </ul>
-        </div>
-
-        <div class="players">ALL PLAYERS • CIRCLE CRIME</div>
-
-        <ul class="player-list">
-            <li>JACK</li> <li>RAJA</li> <li>SHEN</li> <li>SAJID</li> <li>IZZ</li>
-            <li>MURSID</li> <li>BOBON</li> <li>PIZI</li> <li>CIBI</li> <li>DAPIN</li>
-            <li>AZNIL</li> <li>MILO</li> <li>MAN</li> <li>MALL</li> <li>BOYY</li>
-            <li>KILLER</li> <li>PAIJAL</li> <li>ZAM</li> <li>ALYA</li> <li>LEXX</li>
-            <li>RIZZ</li> <li>DAPI</li> <li>KISON</li> <li>WENFF</li>
-        </ul>
-
-        <div class="achievement-title">🏆 ACHIEVEMENT TEAM & MEMBER</div>
-
-        <div class="achievement-title">CRIME ELITE HTTPS - TIER S HTTPS</div>
-        <ul class="achievement-list">
-            <li>RAJA</li> <li>SAJID</li> <li>JACK</li> <li>SHEN</li> <li>IZZ</li>
-        </ul>
-
-        <div class="achievement-title">CRIME JR - TIER S PEPENG</div>
-        <ul class="achievement-list">
-            <li>BOYY</li> <li>ALIEN</li> <li>MURSID</li> <li>RIZZ</li> <li>DAMZ</li>
-        </ul>
-
+  <div class="section">
+    <h2>LEADERSHIP 👑</h2>
+    <div class="list">
+      <strong>LEADER CIRCLE CRIME -</strong> <span>BENZ</span>
     </div>
+  </div>
+
+  <div class="section">
+    <h2>4KAISAR 🌟</h2>
+    <div class="list">
+      <span>JACK</span>
+      <span>MURSID</span>
+      <span>AFIQ</span>
+      <span>LEVI</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>MODERATOR CRIME 🔵</h2>
+    <div class="list">
+      <span>YINN</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>ALL PLAYERS ⭐</h2>
+    <div class="player-box">
+      <div class="list">
+        <span>JACK</span><span>MURSID</span><span>WENNFF</span><span>CHILL</span>
+        <span>MASDO</span><span>YINN</span><span>LEVI</span><span>RIZZ</span>
+        <span>MAN</span><span>AZNIL</span><span>SAJID</span><span>MILO</span>
+        <span>BOYY</span><span>MIEYY</span><span>RAJA</span><span>PIZI</span>
+        <span>LEFFY</span><span>GERI</span><span>SADZ</span><span>JIB</span>
+        <span>MINZ</span><span>JIM</span><span>BAL</span><span>AISH</span>
+        <span>PAN</span><span>AZEL</span><span>YANZO</span><span>DAMZ</span>
+        <span>LADI</span><span>LANAU</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const texts = [
+      "CIRCLE CRIME ONTOP",
+      "JACK HENSEM",
+      "KING MURSID",
+      "BENZ JAGOAN FF",
+      "RIZZ WIKWIK",
+      "BOYY NUB",
+      "MIEYY❤RAJAA",
+      "CIRCLE CRIME ALWAYS NUMBER 1",
+      "EMANG KITA SETARA ?",
+      "BENZ ONTOP",
+      "MATI AJA PLAYER SPEK MURAH",
+      "AFFAH IYA DEKK"
+    ];
+
+    function showPopup(event) {
+      const popup = document.createElement('div');
+      popup.className = 'popup-text';
+
+      // Pilih teks secara rawak dari array
+      const randomIndex = Math.floor(Math.random() * texts.length);
+      popup.textContent = texts[randomIndex];
+
+      // Dapatkan posisi klik
+      const x = event.clientX;
+      const y = event.clientY;
+
+      // Tetapkan posisi popup (sedikit adjust supaya popup tepat di atas klik)
+      popup.style.left = `${x}px`;
+      popup.style.top = `${y}px`;
+
+      document.body.appendChild(popup);
+
+      // Buang elemen selepas animasi habis (1.5s)
+      setTimeout(() => {
+        popup.remove();
+      }, 1500);
+    }
+  </script>
 
 </body>
 </html>
