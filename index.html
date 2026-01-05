@@ -1,210 +1,186 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CIRCLE CRIME || ALL BASE</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-size: 16px;
-    }
-
-    body {
-      font-family: 'Anton', sans-serif;
-      background: linear-gradient(135deg, #000000, #550000);
-      color: #ffffff;
-      padding: 20px;
-      text-align: center;
-      text-transform: uppercase;
-      position: relative;
-      overflow-x: hidden;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    h1, .section, .player-box {
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      text-shadow: 3px 3px 6px #000;
-      letter-spacing: 1px;
-    }
-
-    .section {
-      margin-top: 2.5rem;
-    }
-
-    .section h2 {
-      color: #ffcc00;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    .list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      max-width: 100%;
-      padding: 0 10px;
-    }
-
-    .list span,
-    .list strong {
-      padding: 0.6rem 1rem;
-      background-color: rgba(255, 77, 136, 0.25);
-      border: 2px solid #ff4d88;
-      border-radius: 12px;
-      font-size: 1rem;
-      color: #fff;
-      text-shadow: 2px 2px 4px #000;
-      letter-spacing: 1px;
-      word-break: break-word;
-    }
-
-    .player-box {
-      border: 3px solid #ff4d88;
-      border-radius: 20px;
-      padding: 20px;
-      background-color: rgba(255, 77, 136, 0.1);
-      max-width: 100%;
-      overflow-wrap: break-word;
-    }
-
-    /* Teks pop-up di posisi klik */
-    .popup-text {
-      position: fixed;
-      font-size: 1.8rem;
-      color: #ff4d88;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 6px 14px;
-      border-radius: 12px;
-      text-shadow: 2px 2px 6px #000;
-      opacity: 1;
-      pointer-events: none;
-      user-select: none;
-      animation: popup-rise-fade 1.5s ease-out forwards;
-      white-space: nowrap;
-      transform-origin: center;
-      z-index: 9999;
-    }
-
-    @keyframes popup-rise-fade {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      20% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      80% {
-        opacity: 1;
-        transform: translateY(-10px);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-    }
-  </style>
+<title>FF RealSetting Sensi – One List</title>
+<style>
+body{
+  background:#0b0b0b;
+  color:#fff;
+  font-family:Arial;
+}
+h1{text-align:center}
+ul{
+  list-style:none;
+  padding:0;
+  max-width:380px;
+  margin:auto;
+}
+li{
+  background:#1a1a1a;
+  margin:10px 0;
+  padding:15px;
+  border-radius:12px;
+}
+input,select{
+  width:100%;
+  margin-top:6px;
+}
+input[type=range]{margin:8px 0}
+button{
+  width:48%;
+  padding:10px;
+  margin-top:10px;
+}
+.small{font-size:12px;color:#aaa}
+.center{text-align:center}
+</style>
 </head>
-<body onclick="showPopup(event)">
 
-  <h1>CIRCLE CRIME || ALL BASE</h1>
+<body>
 
-  <div class="section">
-    <h2>LEADERSHIP 👑</h2>
-    <div class="list">
-      <strong>LEADER CIRCLE CRIME -</strong> <span>BENZ</span>
-    </div>
-  </div>
+<h1>🔥 FF REALSETTING SENSI 🔥</h1>
+<p class="center small">Manual Tool • Anti‑Ban • Pro Analysis</p>
 
-  <div class="section">
-    <h2>4KAISAR 🌟</h2>
-    <div class="list">
-      <span>JACK</span>
-      <span>MURSID</span>
-      <span>AFIQ</span>
-      <span>LEVI</span>
-    </div>
-  </div>
+<ul>
 
-  <div class="section">
-    <h2>MODERATOR CRIME 🔵</h2>
-    <div class="list">
-      <span>YINN</span>
-    </div>
-  </div>
+<!-- DEVICE PROFILE -->
+<li>
+<b>📱 Device Profile</b><br>
+RAM
+<select id="ram">
+  <option value="low">2‑3GB</option>
+  <option value="mid">4‑6GB</option>
+  <option value="high">8GB+</option>
+</select>
 
-  <div class="section">
-    <h2>ALL PLAYERS ⭐</h2>
-    <div class="player-box">
-      <div class="list">
-        <span>JACK</span><span>MURSID</span><span>WENNFF</span><span>CHILL</span>
-        <span>MASDO</span><span>YINN</span><span>LEVI</span><span>RIZZ</span>
-        <span>MAN</span><span>AZNIL</span><span>SAJID</span><span>MILO</span>
-        <span>BOYY</span><span>MIEYY</span><span>RAJA</span><span>PIZI</span>
-        <span>LEFFY</span><span>GERI</span><span>SADZ</span><span>JIB</span>
-        <span>MINZ</span><span>JIM</span><span>BAL</span><span>AISH</span>
-        <span>PAN</span><span>AZEL</span><span>YANZO</span><span>DAMZ</span>
-        <span>LADI</span><span>LANAU</span>
-      </div>
-    </div>
-  </div>
+FPS
+<select id="fps">
+  <option value="30">30 FPS</option>
+  <option value="60">60 FPS</option>
+  <option value="90">90 FPS</option>
+</select>
 
-  <script>
-    const texts = [
-      "CIRCLE CRIME ONTOP",
-      "JACK HENSEM",
-      "KING MURSID",
-      "BENZ JAGOAN FF",
-      "RIZZ WIKWIK",
-      "BOYY NUB",
-      "MIEYY❤RAJAA",
-      "CIRCLE CRIME ALWAYS NUMBER 1",
-      "EMANG KITA SETARA ?",
-      "BENZ ONTOP",
-      "MATI AJA PLAYER SPEK MURAH",
-      "AFFAH IYA DEKK"
-    ];
+DPI
+<select id="dpi">
+  <option value="low">Low</option>
+  <option value="mid">Medium</option>
+  <option value="high">High</option>
+</select>
 
-    function showPopup(event) {
-      const popup = document.createElement('div');
-      popup.className = 'popup-text';
+<button onclick="autoTune()" style="width:100%">⚙ Auto Tune</button>
+<p id="deviceMsg" class="small"></p>
+</li>
 
-      // Pilih teks secara rawak dari array
-      const randomIndex = Math.floor(Math.random() * texts.length);
-      popup.textContent = texts[randomIndex];
+<!-- SENSITIVITY -->
+<li>
+<b>🎯 Sensitivity</b><br>
 
-      // Dapatkan posisi klik
-      const x = event.clientX;
-      const y = event.clientY;
+General
+<input type="range" id="general" min="0" max="200" value="100">
+<span id="g">100</span>
 
-      // Tetapkan posisi popup (sedikit adjust supaya popup tepat di atas klik)
-      popup.style.left = `${x}px`;
-      popup.style.top = `${y}px`;
+Red Dot
+<input type="range" id="reddot" min="0" max="200" value="90">
+<span id="r">90</span>
 
-      document.body.appendChild(popup);
+Scope
+<input type="range" id="scope" min="0" max="200" value="80">
+<span id="s">80</span>
 
-      // Buang elemen selepas animasi habis (1.5s)
-      setTimeout(() => {
-        popup.remove();
-      }, 1500);
-    }
-  </script>
+AWM
+<input type="range" id="awm" min="0" max="200" value="60">
+<span id="a">60</span>
+</li>
+
+<!-- ANALYZER -->
+<li>
+<b>🧠 Aim Analyzer (Teori)</b>
+<p id="analyze">—</p>
+</li>
+
+<!-- ACTION -->
+<li class="center">
+<button onclick="save()">💾 Save</button>
+<button onclick="reset()">♻ Reset</button>
+</li>
+
+</ul>
+
+<script>
+const sliders=["general","reddot","scope","awm"];
+sliders.forEach(id=>{
+  document.getElementById(id).oninput=()=>{
+    document.getElementById(id[0]).innerText=
+      document.getElementById(id).value;
+    analyze();
+  }
+});
+
+function autoTune(){
+  let base=90;
+  if(ram.value==="high") base+=15;
+  if(fps.value==="90") base+=10;
+  if(dpi.value==="high") base-=10;
+
+  general.value=base+20;
+  reddot.value=base+10;
+  scope.value=base;
+  awm.value=base-20;
+
+  g.innerText=general.value;
+  r.innerText=reddot.value;
+  s.innerText=scope.value;
+  a.innerText=awm.value;
+
+  deviceMsg.innerText="Auto tuning siap (set manual dalam FF)";
+  analyze();
+}
+
+function analyze(){
+  let score=
+    general.value*0.4+
+    reddot.value*0.3+
+    scope.value*0.2+
+    awm.value*0.1;
+
+  let style="Stable";
+  if(score>110) style="Aggressive 🔥";
+  if(score<80) style="Precise 🎯";
+
+  analyze.innerText=
+    "Aim Style: "+style+
+    " | Score: "+Math.round(score);
+}
+
+function save(){
+  localStorage.setItem("ffsensi",JSON.stringify({
+    g:general.value,r:reddot.value,
+    s:scope.value,a:awm.value
+  }));
+  alert("Preset disimpan!");
+}
+
+function reset(){
+  general.value=100;reddot.value=90;
+  scope.value=80;awm.value=60;
+  g.innerText=100;r.innerText=90;
+  s.innerText=80;a.innerText=60;
+  analyze();
+}
+
+const saved=JSON.parse(localStorage.getItem("ffsensi"));
+if(saved){
+  general.value=saved.g;
+  reddot.value=saved.r;
+  scope.value=saved.s;
+  awm.value=saved.a;
+  g.innerText=saved.g;
+  r.innerText=saved.r;
+  s.innerText=saved.s;
+  a.innerText=saved.a;
+}
+analyze();
+</script>
 
 </body>
 </html>
